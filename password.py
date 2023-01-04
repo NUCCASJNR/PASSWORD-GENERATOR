@@ -1,11 +1,9 @@
 #  STRONG RANDOM PASSWORD GENERATOR
-
+import random
 from random import sample
-lower_case = "abcdefghijklmnopqrstuvwxyz"
-upper_case = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-number = "01234567890"
-signs = "~!@#$%^&*()?><"
-use_for = lower_case  + upper_case + number + signs
-lengt_for_pass = 10
-password = "".join(sample(use_for, lengt_for_pass))
-print("Your generated password is:", password)  
+import string
+print("Generate random password")
+length = int(input("Enter length of your password :"))
+chars = string.ascii_letters + string.digits + string.punctuation
+password = "".join(sample(chars, k = length))
+print("Your generated password is:", password)
